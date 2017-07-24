@@ -68,6 +68,7 @@ SensiboPlatform.prototype = {
  						that.log("Device Added (Name: %s, ID: %s, Group: %s)", accessory.name, accessory.deviceid, accessory.deviceGroup);
  						that.deviceLookup.push(accessory);
  						foundAccessories.push(accessory);
+ 					}
 				}
 				//refreshLoop();
 				callback(foundAccessories);
