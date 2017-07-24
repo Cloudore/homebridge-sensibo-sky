@@ -64,10 +64,10 @@ SensiboPlatform.prototype = {
  					device.hideHumidity = that.hideHumidity || false;
  					podTimeLapse += 0.5;
  					accessory = new SensiboPodAccessory(that, device);
- 				if (accessory != undefined) {
- 					that.log("Device Added (Name: %s, ID: %s, Group: %s)", accessory.name, accessory.deviceid, accessory.deviceGroup);
- 					that.deviceLookup.push(accessory);
- 					foundAccessories.push(accessory);
+ 					if (accessory != undefined) {
+ 						that.log("Device Added (Name: %s, ID: %s, Group: %s)", accessory.name, accessory.deviceid, accessory.deviceGroup);
+ 						that.deviceLookup.push(accessory);
+ 						foundAccessories.push(accessory);
 				}
 				//refreshLoop();
 				callback(foundAccessories);
