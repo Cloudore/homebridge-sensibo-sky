@@ -8,7 +8,8 @@ Original Plug-in: https://github.com/wailuen/homebridge-sensibo-sky
 2. Go into your node_modules folder, where the plug ins are stored.
 3. Download this plugin using: "sudo git clone https://github.com/Cloudore/homebridge-sensibo-sky"
 4. go into the plug in folder with "cd homebridge-sensibo-sky"
-5. Update your configuration file. See sample config.json snippet below. 
+5. Install using "sudo npm install"
+6. Update your configuration file. See sample config.json snippet below. 
 
 # Configuration
 
