@@ -93,7 +93,22 @@ function SensiboPodAccessory(platform, device) {
 	// Thermostat Service	
 	// Current Heating/Cooling Mode characteristic
 
-	this.addService(Service.Thermostat);	
+	this.addService(Service.Thermostat);
+	
+	this.getService(Service.Thermostat)
+		.addCharacteristic(Characteristic.On)
+		.on("get", function (callback) {
+			callback(null, that.state.on);
+		})
+		.on("set", function(value, callback) {
+			callback();
+			that.state.on = value;
+			that.platform.api.submitState(that.deviceid, that.state, function(data){
+				if (data !== undefined) {
+					logStateChange(that)
+				}
+			});
+		});
 
 	this.getService(Service.Thermostat)
 		.getCharacteristic(Characteristic.CurrentHeatingCoolingState)
