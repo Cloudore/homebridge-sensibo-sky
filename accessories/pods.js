@@ -268,9 +268,9 @@ function SensiboPodAccessory(platform, device) {
 			callback(null, that.coolingThresholdTemperature);
 		})
 		.on("set", function(value, callback) {
-			callback();
 			that.log(that.name,": Setting threshold (name: ",that.name,", threshold: ",value,")");
 			that.coolingThresholdTemperature = value;
+			that.getService(Service.Thermostat).getCharacteristic(Characteristic.TargetTemperature).setValue(value, callback);
 			//that.coolingThresholdTemperature = that.temp.temperature;
 		});
 	
